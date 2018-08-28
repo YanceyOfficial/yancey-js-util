@@ -24,7 +24,7 @@ export const formatJSONDate = (jsonDate) => {
  * */
 export const deduplicateArray = (arr) => {
     return [...new Set(arr)];
-}
+};
 
 /**
  *  shuffle([1, 2, 3, 4, 5])
@@ -37,7 +37,7 @@ export const shuffle = function (arr) {
         [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;
-}
+};
 
 /**
  *  @param {String} str
@@ -51,7 +51,7 @@ export const toThousands = (str, currencies = '$') => {
     } else {
         return currencies + str.replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
     }
-}
+};
 
 /**
  *  @param {String} str
@@ -60,7 +60,7 @@ export const toThousands = (str, currencies = '$') => {
  * */
 export const capitalized = (str) => {
     return str.toLowerCase().replace(/( |^)[a-z]/g, (L) => L.toUpperCase());
-}
+};
 
 /**
  *  @param {Number} min
@@ -68,11 +68,11 @@ export const capitalized = (str) => {
  *  @example getRandomInt(1, 10)
  *  @return 6
  * */
-const getRandomInt = (min, max) => {
+export const getRandomInt = (min, max) => {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min; // The maximum is exclusive and the minimum is inclusive
-}
+};
 
 /**
  *  @param {Number} min
@@ -80,8 +80,18 @@ const getRandomInt = (min, max) => {
  *  @example getRandomIntInclusive(1, 10)
  *  @return 10
  * */
-const getRandomIntInclusive = (min, max) => {
+export const getRandomIntInclusive = (min, max) => {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min; // Both of The maximum and minimum are inclusive
-}
+};
+
+/**
+ *  @param {Array} arr
+ *  @example deepFlatten(['a', ['b', 'c'], [['d', 'e']], ['f']])
+ *  @return [ 'a', 'b', 'c', 'd', 'e', 'f' ]
+ * */
+export const deepFlatten = (arr) => {
+  const flatten = (arr) => [].concat(...arr);
+  return flatten(arr.map(x => Array.isArray(x) ? deepFlatten(x) : x));
+};
