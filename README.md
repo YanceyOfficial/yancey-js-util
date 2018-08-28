@@ -13,7 +13,8 @@ Collcete the JavaScript utility functions in works. Continuous updating...
 - toThousands('1234567.85', '¥') => ¥1,234,567.85
 - capitalized('hello, world!') => Hello, World!
 - getRandomInt(1, 10) => 6
-- getRandomIntInclusive => 10
+- getRandomIntInclusive(1, 10) => 10
+- deepFlatten(['a', ['b', 'c'], [['d', 'e']], ['f']]) => [ 'a', 'b', 'c', 'd', 'e', 'f' ]
 
 ## License
 
