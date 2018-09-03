@@ -54,6 +54,19 @@ export const toThousands = (str, currencies = '$') => {
 };
 
 /**
+ *  @param {Number} num
+ *  @example simpleToThousands(1234567.85, '¥')
+ *  @return ¥1,234,567.85
+ * */
+export const simpleToThousands = (num, currencies = '$') => {
+  if (!parseFloat(num)) {
+    return 'Please input number';
+  } else {
+    return currencies + num.toLocaleString('en-US');
+  }
+};
+
+/**
  *  @param {String} str
  *  @example capitalized('hello, world!')
  *  @return Hello, World!
