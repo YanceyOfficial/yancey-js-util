@@ -108,3 +108,13 @@ export const deepFlatten = (arr) => {
   const flatten = (arr) => [].concat(...arr);
   return flatten(arr.map(x => Array.isArray(x) ? deepFlatten(x) : x));
 };
+
+/**
+ *  @example checkWebp()
+ *  @return true
+ * */
+export const checkWebp = () => {
+  return (document.createElement('canvas')
+    .toDataURL('image/webp')
+    .indexOf('data:image/webp') === 0);
+};
