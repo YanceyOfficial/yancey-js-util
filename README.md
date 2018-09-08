@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Collcete the JavaScript utility functions in works. Continuous updating...
+Collect the JavaScript utility functions in works. Continuous updating...
 
-## Function List
+## Function Lists
 
 - getType([1, 2, 3]) => string
 - formatJSONDate('2018-08-10T03:09:14.127086Z') => 2018-08-10 11:09:14
