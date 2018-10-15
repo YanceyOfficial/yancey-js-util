@@ -101,3 +101,11 @@ export const checkWebp = () => {
     .toDataURL('image/webp')
     .indexOf('data:image/webp') === 0);
 };
+
+/**
+ *  @param {String} filename
+ *  @get file extension name
+ * */
+export const = getFileExtension(filename) => {
+  return filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
+}

@@ -17,6 +17,7 @@ Collect the JavaScript utility functions in works. Continuous updating...
 - getRandomIntInclusive(1, 10) => 10
 - deepFlatten(['a', ['b', 'c'], [['d', 'e']], ['f']]) => [ 'a', 'b', 'c', 'd', 'e', 'f' ]
 - checkWebp() => true
+- getFileExtension('sayaka.jpg') => jpg
 
 ## License
 
