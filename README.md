@@ -4,6 +4,10 @@
 
 Collect the JavaScript utility functions in works. Continuous updating...
 
+## Install
+
+	npm i yancey-js-util
+
 ## Function Lists
 
 - getType([1, 2, 3]) => string
