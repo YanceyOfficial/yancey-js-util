@@ -1,0 +1,26 @@
+{
+  "name": "yancey-js-util",
+  "version": "1.0.0",
+  "description": "Some util functions in works and practice.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YanceyOfficial/JS-Utility-Functions.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Util-Function"
+  ],
+  "author": "Yancey Leo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YanceyOfficial/JS-Utility-Functions/issues"
+  },
+  "homepage": "https://github.com/YanceyOfficial/JS-Utility-Functions#readme"
+}
