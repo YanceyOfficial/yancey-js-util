@@ -16,6 +16,16 @@ export const formatJSONDate = (jsonDate) => {
 };
 
 /**
+ *  @param {String} date
+ *  @description 2018-11-11 15:53:15 => November 11, 2018
+ * */
+export const formatCommonDate = (date) => {
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const dataList = date.split(' ')[0].split('-');
+  return `${months[parseInt(dataList[1], 10) - 1]} ${dataList[2]}, ${dataList[0]}`;
+};
+
+/**
  *  @param {Array} arr
  *  @description Remove deduplicate elements at an array.
  * */
@@ -106,6 +116,8 @@ export const checkWebp = () => {
  *  @param {String} filename
  *  @get file extension name
  * */
-export const = getFileExtension(filename) => {
+export const getFileExtension = (filename) => {
   return filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
-}
+};
+
+
