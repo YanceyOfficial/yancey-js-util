@@ -22,6 +22,7 @@ Collect the JavaScript utility functions in works. Continuous updating...
 - deepFlatten(['a', ['b', 'c'], [['d', 'e']], ['f']]) => [ 'a', 'b', 'c', 'd', 'e', 'f' ]
 - checkWebp() => true
 - getFileExtension('sayaka.jpg') => jpg
+- isValidIP('127.0.0.1') => true
 
 ## License
 
