@@ -2,18 +2,14 @@
  *  @param {Object} param
  *  @description To get the type of param.
  * */
-export const getType = (param) => {
-  return Object.prototype.toString.call(param).slice(8, -1).toLowerCase();
-};
+export const getType = param => Object.prototype.toString.call(param).slice(8, -1).toLowerCase();
 
 /**
  *  @param {String} jsonDate
  *  @description Convert JSONDate to common.
  * */
-export const formatJSONDate = (jsonDate) => {
-  return new Date(+new Date(new Date(jsonDate).toJSON()) + 8 * 3600 * 1000).toISOString()
-    .replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '');
-};
+export const formatJSONDate = jsonDate => new Date(+new Date(new Date(jsonDate).toJSON()) + 8 * 3600 * 1000).toISOString()
+  .replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '');
 
 /**
  *  @param {String} date
@@ -29,16 +25,28 @@ export const formatCommonDate = (date) => {
  *  @param {Array} arr
  *  @description Remove deduplicate elements at an array.
  * */
-export const deduplicateArray = (arr) => {
-  return [...new Set(arr)];
-};
+export const deduplicateArray = (arr) => [...new Set(arr)];
+
+/**
+ *  @param {Array} arr
+ *  @param {String} keyName
+ *  @description Remove deduplicate elements by key at an object-array.
+ * */
+export const deduplicateObjectArray = (arr, keyName) => {
+  const hash = {};
+  return arr.reduce((item, next) => {
+    hash[next[keyName]] ? null : (hash[next[keyName]] = true && item.push(next));
+    return item;
+  }, [])
+}
 
 /**
  *  @param {Array} arr
  *  @description Shuffle an array.
  * */
 export const shuffle = function (arr) {
-  let i = arr.length, j;
+  let i = arr.length,
+    j;
   while (i) {
     j = Math.floor(Math.random() * i--);
     [arr[i], arr[j]] = [arr[j], arr[i]];
@@ -116,9 +124,7 @@ export const checkWebp = () => {
  *  @param {String} filename
  *  @get file extension name
  * */
-export const getFileExtension = (filename) => {
-  return filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
-};
+export const getFileExtension = (filename) => filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
 
 /**
  *  @param {String} ip
@@ -129,5 +135,3 @@ export const isValidIP = (ip) => {
     /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
   return reg.test(ip);
 };
-
-
