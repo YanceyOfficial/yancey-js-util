@@ -2,30 +2,52 @@
  *  @param {Object} param
  *  @description To get the type of param.
  * */
-export const getType = param => Object.prototype.toString.call(param).slice(8, -1).toLowerCase();
+export const getType = param =>
+  Object.prototype.toString
+    .call(param)
+    .slice(8, -1)
+    .toLowerCase();
 
 /**
  *  @param {String} jsonDate
  *  @description Convert JSONDate to common.
  * */
-export const formatJSONDate = jsonDate => new Date(+new Date(new Date(jsonDate).toJSON()) + 8 * 3600 * 1000).toISOString()
-  .replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '');
+export const formatJSONDate = jsonDate =>
+  new Date(+new Date(new Date(jsonDate).toJSON()) + 8 * 3600 * 1000)
+    .toISOString()
+    .replace(/T/g, ' ')
+    .replace(/\.[\d]{3}Z/, '');
 
 /**
  *  @param {String} date
  *  @description 2018-11-11 15:53:15 => November 11, 2018
  * */
-export const formatCommonDate = (date) => {
-  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+export const formatCommonDate = date => {
+  const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ];
   const dataList = date.split(' ')[0].split('-');
-  return `${months[parseInt(dataList[1], 10) - 1]} ${dataList[2]}, ${dataList[0]}`;
+  return `${months[parseInt(dataList[1], 10) - 1]} ${dataList[2]}, ${
+    dataList[0]
+  }`;
 };
 
 /**
  *  @param {Array} arr
  *  @description Remove deduplicate elements at an array.
  * */
-export const deduplicateArray = (arr) => [...new Set(arr)];
+export const deduplicateArray = arr => [...new Set(arr)];
 
 /**
  *  @param {Array} arr
@@ -35,16 +57,18 @@ export const deduplicateArray = (arr) => [...new Set(arr)];
 export const deduplicateObjectArray = (arr, keyName) => {
   const hash = {};
   return arr.reduce((item, next) => {
-    hash[next[keyName]] ? null : (hash[next[keyName]] = true && item.push(next));
+    hash[next[keyName]]
+      ? null
+      : (hash[next[keyName]] = true && item.push(next));
     return item;
-  }, [])
-}
+  }, []);
+};
 
 /**
  *  @param {Array} arr
  *  @description Shuffle an array.
  * */
-export const shuffle = function (arr) {
+export const shuffle = function(arr) {
   let i = arr.length,
     j;
   while (i) {
@@ -76,8 +100,8 @@ export const simpleToThousands = (num, currencies = '$') => {
  *  @param {String} str
  *  @description Capitalize the first letter of each word.
  * */
-export const capitalized = (str) => {
-  return str.toLowerCase().replace(/( |^)[a-z]/g, (L) => L.toUpperCase());
+export const capitalized = str => {
+  return str.toLowerCase().replace(/( |^)[a-z]/g, L => L.toUpperCase());
 };
 
 /**
@@ -106,38 +130,54 @@ export const getRandomIntInclusive = (min, max) => {
  *  @param {Array} arr
  *  @description Deep flatten an array.
  * */
-export const deepFlatten = (arr) => {
-  const flatten = (arr) => [].concat(...arr);
-  return flatten(arr.map(x => Array.isArray(x) ? deepFlatten(x) : x));
+export const deepFlatten = arr => {
+  const flatten = arr => [].concat(...arr);
+  return flatten(arr.map(x => (Array.isArray(x) ? deepFlatten(x) : x)));
 };
 
 /**
  *  @description Detect whether the browser supports webp.
  * */
 export const checkWebp = () => {
-  return (document.createElement('canvas')
-    .toDataURL('image/webp')
-    .indexOf('data:image/webp') === 0);
+  return (
+    document
+      .createElement('canvas')
+      .toDataURL('image/webp')
+      .indexOf('data:image/webp') === 0
+  );
 };
 
 /**
  *  @param {String} filename
  *  @get file extension name
  * */
-export const getFileExtension = (filename) => filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
+export const getFileExtension = filename =>
+  filename.slice(((filename.lastIndexOf('.') - 1) >>> 0) + 2);
 
 /**
  *  @param {String} ip
  *  @description check ip
  * */
-export const isValidIP = (ip) => {
-  const reg =
-    /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
+export const isValidIP = ip => {
+  const reg = /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
   return reg.test(ip);
 };
 
 /**
  *  @param {String} key
- *  @description sort an Object-Array By key
+ *  @description Sort an Object-Array By key
  * */
-export const sortBy = (key) => (a, b) => (a[key] < b[key] ? -1 : a[key] > b[key] ? 1 : 0);
+export const sortBy = key => (a, b) =>
+  a[key] < b[key] ? -1 : a[key] > b[key] ? 1 : 0;
+
+/**
+ *  @param {String} cookies
+ *  @description Cookies string to object
+ * */
+export const formatCookie = cookies => {
+  const o = {};
+  cookies
+    .split(';')
+    .forEach(value => (o[value.split('=')[0]] = value.split('=')[1]));
+  return o;
+};

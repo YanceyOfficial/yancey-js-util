@@ -25,6 +25,7 @@ Collect the JavaScript utility functions in works. Continuous updating...
 - getFileExtension('sayaka.jpg') => jpg
 - isValidIP('127.0.0.1') => true
 - [{name: 'd'}, {name: 'v'}, {name: 'a'}].sort(sortBy('name')) => [{name: 'a'}, {name: 'd'}, {name: 'v'}]
+- formatCookie(document.cookie)
 
 ## License
 
