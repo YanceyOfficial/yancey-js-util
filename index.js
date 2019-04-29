@@ -1,3 +1,5 @@
+import {reg} from './constant';
+
 /**
  *  @param {Object} param
  *  @description To get the type of param.
@@ -17,31 +19,6 @@ export const formatJSONDate = jsonDate =>
     .toISOString()
     .replace(/T/g, ' ')
     .replace(/\.[\d]{3}Z/, '');
-
-/**
- *  @param {String} date
- *  @description 2018-11-11 15:53:15 => November 11, 2018
- * */
-export const formatCommonDate = date => {
-  const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-  ];
-  const dataList = date.split(' ')[0].split('-');
-  return `${months[parseInt(dataList[1], 10) - 1]} ${dataList[2]}, ${
-    dataList[0]
-  }`;
-};
 
 /**
  *  @param {Array} arr
@@ -159,8 +136,7 @@ export const getFileExtension = filename =>
  *  @description check ip
  * */
 export const isValidIP = ip => {
-  const reg = /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
-  return reg.test(ip);
+  return reg.ip.test(ip);
 };
 
 /**
