@@ -61,7 +61,7 @@ export const shuffle = function(arr) {
  *  @description Make amount to thousands.
  * */
 export const toThousands = (str, currencies = '$') => {
-  return currencies + str.replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
+  return currencies + str.replace(/(\d)(?=(\d{3})+$)/g, '$1,');
 };
 
 /**
