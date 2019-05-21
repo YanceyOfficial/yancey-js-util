@@ -1,4 +1,4 @@
-import {reg} from './constant';
+import { reg } from './constant';
 
 /**
  *  @param {Object} param
@@ -108,8 +108,11 @@ export const getRandomIntInclusive = (min, max) => {
  *  @description Deep flatten an array.
  * */
 export const deepFlatten = arr => {
-  const flatten = arr => [].concat(...arr);
-  return flatten(arr.map(x => (Array.isArray(x) ? deepFlatten(x) : x)));
+  return arr.reduce(
+    (acc, val) =>
+      Array.isArray(val) ? acc.concat(deepFlatten(val)) : acc.concat(val),
+    []
+  );
 };
 
 /**
