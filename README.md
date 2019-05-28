@@ -42,6 +42,8 @@ Collect the JavaScript utility functions in works. Continuous updating...
 
 - formatCookie(document.cookie)
 
+- sleep(1000)
+
 ## License
 
 JS-Utility-Functions is [MIT licensed](https://opensource.org/licenses/MIT).

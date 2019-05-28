@@ -160,3 +160,12 @@ export const formatCookie = cookies => {
     .forEach(value => (o[value.split('=')[0]] = value.split('=')[1]));
   return o;
 };
+
+/**
+ *  @param {Number} dalay
+ *  @description Delay Function
+ * */
+export const sleep = (delay = 1000) =>
+  new Promise(resolve => {
+    setTimeout(() => resolve(), delay);
+  });
