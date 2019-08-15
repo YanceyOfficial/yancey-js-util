@@ -1,4 +1,4 @@
-import { reg } from './constant';
+import { reg } from "./constant";
 
 /**
  *  @param {Object} param
@@ -17,8 +17,8 @@ export const getType = param =>
 export const formatJSONDate = jsonDate =>
   new Date(+new Date(new Date(jsonDate).toJSON()) + 8 * 3600 * 1000)
     .toISOString()
-    .replace(/T/g, ' ')
-    .replace(/\.[\d]{3}Z/, '');
+    .replace(/T/g, " ")
+    .replace(/\.[\d]{3}Z/, "");
 
 /**
  *  @param {Array} arr
@@ -60,8 +60,8 @@ export const shuffle = function(arr) {
  *  @param {String} currencies
  *  @description Make amount to thousands.
  * */
-export const toThousands = (str, currencies = '$') => {
-  return currencies + str.replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+export const toThousands = (str, currencies = "$") => {
+  return currencies + str.replace(/(\d)(?=(\d{3})+$)/g, "$1,");
 };
 
 /**
@@ -69,8 +69,8 @@ export const toThousands = (str, currencies = '$') => {
  *  @param {String} currencies
  *  @description The other method to make amount to thousands.
  * */
-export const simpleToThousands = (num, currencies = '$') => {
-  return currencies + num.toLocaleString('en-US');
+export const simpleToThousands = (num, currencies = "$") => {
+  return currencies + num.toLocaleString("en-US");
 };
 
 /**
@@ -121,9 +121,9 @@ export const deepFlatten = arr => {
 export const checkWebp = () => {
   return (
     document
-      .createElement('canvas')
-      .toDataURL('image/webp')
-      .indexOf('data:image/webp') === 0
+      .createElement("canvas")
+      .toDataURL("image/webp")
+      .indexOf("data:image/webp") === 0
   );
 };
 
@@ -132,7 +132,7 @@ export const checkWebp = () => {
  *  @get file extension name
  * */
 export const getFileExtension = filename =>
-  filename.slice(((filename.lastIndexOf('.') - 1) >>> 0) + 2);
+  filename.slice(((filename.lastIndexOf(".") - 1) >>> 0) + 2);
 
 /**
  *  @param {String} ip
@@ -156,8 +156,8 @@ export const sortBy = key => (a, b) =>
 export const formatCookie = cookies => {
   const o = {};
   cookies
-    .split(';')
-    .forEach(value => (o[value.split('=')[0]] = value.split('=')[1]));
+    .split(";")
+    .forEach(value => (o[value.split("=")[0]] = value.split("=")[1]));
   return o;
 };
 
@@ -166,6 +166,10 @@ export const formatCookie = cookies => {
  *  @description Delay Function
  * */
 export const sleep = (delay = 1000) =>
-  new Promise(resolve => {
-    setTimeout(() => resolve(), delay);
-  });
+  new Promise(resolve => setTimeout(() => resolve(), delay));
+
+/**
+ *  @description Get the hex color
+ * */
+export const randomColor = () =>
+  "#" + ("00000" + ((Math.random() * 0x1000000) << 0).toString(16)).slice(-6);

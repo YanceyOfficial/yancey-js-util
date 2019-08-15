@@ -6,7 +6,7 @@ Collect the JavaScript utility functions in works. Continuous updating...
 
 ## Install
 
-	npm i yancey-js-util
+    npm i yancey-js-util
 
 ## Function Lists
 
@@ -44,6 +44,8 @@ Collect the JavaScript utility functions in works. Continuous updating...
 
 - sleep(1000)
 
+- randomColor() => #000000
+
 ## License
 
-JS-Utility-Functions is [MIT licensed](https://opensource.org/licenses/MIT).
+JS-Tools is [MIT licensed](https://opensource.org/licenses/MIT).
