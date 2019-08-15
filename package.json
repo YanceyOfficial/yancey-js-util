@@ -1,6 +1,6 @@
 {
   "name": "yancey-js-util",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Collect the JavaScript utility functions in works. Continuous updating...",
   "main": "index.js",
   "directories": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YanceyOfficial/JS-Utility-Functions.git"
+    "url": "git+https://github.com/YanceyOfficial/js-tools.git"
   },
   "keywords": [
     "JavaScript",
@@ -20,7 +20,7 @@
   "author": "Yancey Leo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/YanceyOfficial/JS-Utility-Functions/issues"
+    "url": "https://github.com/YanceyOfficial/js-tools/issues"
   },
-  "homepage": "https://github.com/YanceyOfficial/JS-Utility-Functions#readme"
+  "homepage": "https://github.com/YanceyOfficial/js-tools#readme"
 }
