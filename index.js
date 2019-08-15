@@ -169,7 +169,16 @@ export const sleep = (delay = 1000) =>
   new Promise(resolve => setTimeout(() => resolve(), delay));
 
 /**
- *  @description Get the hex color
+ *  @description Get a hex color
  * */
 export const randomColor = () =>
   "#" + ("00000" + ((Math.random() * 0x1000000) << 0).toString(16)).slice(-6);
+
+/**
+ *  @param {Number} length
+ *  @description Generate a random series at most 10 length
+ * */
+export const randomSeries = length =>
+  Math.random()
+    .toString(36)
+    .slice(2, 2 + length);

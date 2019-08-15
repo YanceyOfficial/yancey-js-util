@@ -46,6 +46,8 @@ Collect the JavaScript utility functions in works. Continuous updating...
 
 - randomColor() => #000000
 
+- randomSeries() => 7w1krvcf34l
+
 ## License
 
 JS-Tools is [MIT licensed](https://opensource.org/licenses/MIT).
