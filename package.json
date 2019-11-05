@@ -1,13 +1,13 @@
 {
   "name": "yancey-js-util",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Collect the JavaScript utility functions in works. Continuous updating...",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "node_modules/rollup/dist/bin/rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +25,8 @@
   },
   "homepage": "https://github.com/YanceyOfficial/js-tools#readme",
   "devDependencies": {
+    "rollup": "^1.26.3",
+    "rollup-plugin-filesize": "^6.2.1",
     "rollup-plugin-typescript": "^1.0.1",
     "rollup-plugin-uglify": "^6.0.3",
     "tslib": "^1.10.0",
