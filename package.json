@@ -7,6 +7,7 @@
     "test": "test"
   },
   "scripts": {
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +23,11 @@
   "bugs": {
     "url": "https://github.com/YanceyOfficial/js-tools/issues"
   },
-  "homepage": "https://github.com/YanceyOfficial/js-tools#readme"
+  "homepage": "https://github.com/YanceyOfficial/js-tools#readme",
+  "devDependencies": {
+    "rollup-plugin-typescript": "^1.0.1",
+    "rollup-plugin-uglify": "^6.0.3",
+    "tslib": "^1.10.0",
+    "typescript": "^3.6.4"
+  }
 }
