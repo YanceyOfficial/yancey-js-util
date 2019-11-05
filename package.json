@@ -1,8 +1,9 @@
 {
   "name": "yancey-js-util",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Collect the JavaScript utility functions in works. Continuous updating...",
   "main": "lib/index.js",
+  "typings": "src/index.d.ts",
   "directories": {
     "test": "test"
   },
