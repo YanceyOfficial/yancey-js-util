@@ -182,3 +182,11 @@ export const randomSeries = (length: number) =>
   Math.random()
     .toString(36)
     .slice(2, 2 + length)
+
+/**
+ *  @param {String} objectId
+ *  @description transform MongoDB's ObjectId to timestamp
+ * */
+export const mongoObjectIdToTimestamp = function(objectId: string) {
+  return parseInt(objectId.substring(0, 8), 16) * 1000
+}
