@@ -1,30 +1,10 @@
 import { reg } from './shared/constant'
-import {
-  GetType,
-  FormatJSONDate,
-  DeduplicateArray,
-  DeduplicateObjectArray,
-  Shuffle,
-  ToThousands,
-  SimpleToThousands,
-  Capitalized,
-  GetRandomInt,
-  GetRandomIntInclusive,
-  DeepFlatten,
-  CheckWebp,
-  GetFileExtension,
-  IsValidIP,
-  FormatCookie,
-  RandomColor,
-  RandomSeries,
-  MongoObjectIdToTimestamp,
-} from './index.d'
 
 /**
  *  @param {Object} param
  *  @description To get the type of param.
  * */
-export const getType: GetType = <T>(param: T) =>
+export const getType = <T>(param: T) =>
   Object.prototype.toString
     .call(param)
     .slice(8, -1)
@@ -34,7 +14,7 @@ export const getType: GetType = <T>(param: T) =>
  *  @param {String} jsonDate
  *  @description Convert JSONDate to common.
  * */
-export const formatJSONDate: FormatJSONDate = (jsonDate: string) =>
+export const formatJSONDate = (jsonDate: string) =>
   new Date(+new Date(new Date(jsonDate).toJSON()) + 8 * 3600 * 1000)
     .toISOString()
     .replace(/T/g, ' ')
@@ -44,19 +24,14 @@ export const formatJSONDate: FormatJSONDate = (jsonDate: string) =>
  *  @param {Array} arr
  *  @description Remove deduplicate elements at an array.
  * */
-export const deduplicateArray: DeduplicateArray = <T>(arr: T[]) => [
-  ...new Set(arr),
-]
+export const deduplicateArray = <T>(arr: T[]) => [...new Set(arr)]
 
 /**
  *  @param {Array} arr
  *  @param {String} keyName
  *  @description Remove deduplicate elements by key at an object-array.
  * */
-export const deduplicateObjectArray: DeduplicateObjectArray = <T>(
-  arr: T[],
-  keyName: string,
-) => {
+export const deduplicateObjectArray = <T>(arr: T[], keyName: string) => {
   const hash = {}
   return arr.reduce((item, next) => {
     // @ts-ignore
@@ -69,7 +44,7 @@ export const deduplicateObjectArray: DeduplicateObjectArray = <T>(
  *  @param {Array} arr
  *  @description Shuffle an array.
  * */
-export const shuffle: Shuffle = <T>(arr: T[]) => {
+export const shuffle = <T>(arr: T[]) => {
   let i = arr.length,
     j
   while (i) {
@@ -84,7 +59,7 @@ export const shuffle: Shuffle = <T>(arr: T[]) => {
  *  @param {String} currencySymbol
  *  @description Make amount to thousands.
  * */
-export const toThousands: ToThousands = (
+export const toThousands = (
   numberStr: string,
   currencySymbol: string = '$',
 ) => {
@@ -96,7 +71,7 @@ export const toThousands: ToThousands = (
  *  @param {String} currencySymbol
  *  @description The other method to make amount to thousands.
  * */
-export const simpleToThousands: SimpleToThousands = (
+export const simpleToThousands = (
   num: number,
   currencySymbol: string = '$',
 ) => {
@@ -107,7 +82,7 @@ export const simpleToThousands: SimpleToThousands = (
  *  @param {String} str
  *  @description Capitalize the first letter of each word.
  * */
-export const capitalized: Capitalized = (str: string) => {
+export const capitalized = (str: string) => {
   return str.toLowerCase().replace(/( |^)[a-z]/g, L => L.toUpperCase())
 }
 
@@ -116,7 +91,7 @@ export const capitalized: Capitalized = (str: string) => {
  *  @param {Number} max
  *  @description  The maximum is exclusive and the minimum is inclusive.
  * */
-export const getRandomInt: GetRandomInt = (min: number, max: number) => {
+export const getRandomInt = (min: number, max: number) => {
   min = Math.ceil(min)
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min)) + min
@@ -127,10 +102,7 @@ export const getRandomInt: GetRandomInt = (min: number, max: number) => {
  *  @param {Number} max
  *  @description Both of The maximum and minimum are inclusive.
  * */
-export const getRandomIntInclusive: GetRandomIntInclusive = (
-  min: number,
-  max: number,
-) => {
+export const getRandomIntInclusive = (min: number, max: number) => {
   min = Math.ceil(min)
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min + 1)) + min
@@ -140,7 +112,7 @@ export const getRandomIntInclusive: GetRandomIntInclusive = (
  *  @param {Array} arr
  *  @description Deep flatten an array.
  * */
-export const deepFlatten: DeepFlatten = <T>(arr: T[]) => {
+export const deepFlatten = (arr: any) => {
   return arr.reduce(
     (acc: any, val: any) =>
       Array.isArray(val) ? acc.concat(deepFlatten(val)) : acc.concat(val),
@@ -151,7 +123,7 @@ export const deepFlatten: DeepFlatten = <T>(arr: T[]) => {
 /**
  *  @description Detect whether the browser supports webp.
  * */
-export const checkWebp: CheckWebp = () => {
+export const checkWebp = () => {
   return (
     document
       .createElement('canvas')
@@ -164,14 +136,14 @@ export const checkWebp: CheckWebp = () => {
  *  @param {String} filename
  *  @get file extension name
  * */
-export const getFileExtension: GetFileExtension = (filename: string) =>
+export const getFileExtension = (filename: string) =>
   filename.slice(((filename.lastIndexOf('.') - 1) >>> 0) + 2)
 
 /**
  *  @param {String} ip
  *  @description check ip
  * */
-export const isValidIP: IsValidIP = (ip: string) => {
+export const isValidIP = (ip: string) => {
   return reg.ip.test(ip)
 }
 
@@ -186,7 +158,7 @@ export const sortBy = (key: string) => (a: any, b: any) =>
  *  @param {String} cookies
  *  @description Cookies string to object
  * */
-export const formatCookie: FormatCookie = (cookies: string) => {
+export const formatCookie = (cookies: string) => {
   const o = {}
   cookies
     .split(';')
@@ -205,14 +177,14 @@ export const sleep = (delay = 1000) =>
 /**
  *  @description Get a hex color
  * */
-export const randomColor: RandomColor = () =>
+export const randomColor = () =>
   '#' + ('00000' + ((Math.random() * 0x1000000) << 0).toString(16)).slice(-6)
 
 /**
  *  @param {Number} length
  *  @description Generate a random series at most 10 length
  * */
-export const randomSeries: RandomSeries = (length: number) =>
+export const randomSeries = (length: number) =>
   Math.random()
     .toString(36)
     .slice(2, 2 + length)
@@ -221,8 +193,6 @@ export const randomSeries: RandomSeries = (length: number) =>
  *  @param {String} objectId
  *  @description transform MongoDB's ObjectId to timestamp
  * */
-export const mongoObjectIdToTimestamp: MongoObjectIdToTimestamp = (
-  objectId: string,
-) => {
+export const mongoObjectIdToTimestamp = (objectId: string) => {
   return parseInt(objectId.substring(0, 8), 16) * 1000
 }
