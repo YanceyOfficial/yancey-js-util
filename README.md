@@ -1,5 +1,7 @@
 # JS-Utility-Functions
 
+[![NPM](https://nodei.co/npm/yancey-js-util.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/yancey-js-util/)
+
 ## Introduction
 
 Collect the JavaScript utility functions in works. Continuous updating...

@@ -1,8 +1,8 @@
 {
   "name": "yancey-js-util",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Collect the JavaScript utility functions in works. Continuous updating...",
-  "main": "index.js",
+  "main": "lib/index.js",
   "directories": {
     "test": "test"
   },
@@ -16,7 +16,7 @@
   },
   "keywords": [
     "JavaScript",
-    "Util-Function"
+    "Util-Functions"
   ],
   "author": "Yancey Leo",
   "license": "MIT",
