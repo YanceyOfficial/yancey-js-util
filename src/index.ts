@@ -1,4 +1,4 @@
-import { reg } from './shared/constant'
+import { reg } from './constant'
 
 /**
  *  @param {Object} param
