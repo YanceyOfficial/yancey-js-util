@@ -149,10 +149,22 @@ export const isValidIP = (ip: string) => {
 
 /**
  *  @param {String} key
- *  @description Sort an Object-Array By key
+ *  @param {order} 'ascend' | 'descend'
+ *  @description Sort an Array-Object By key
  * */
-export const sortBy = (key: string) => (a: any, b: any) =>
-  a[key] < b[key] ? -1 : a[key] > b[key] ? 1 : 0
+export const sortBy = <T>(
+  key: keyof T,
+  order: 'ascend' | 'descend' = 'ascend',
+) => (a: T, b: T) =>
+  a[key] < b[key]
+    ? order === 'ascend'
+      ? -1
+      : 1
+    : a[key] > b[key]
+    ? order === 'ascend'
+      ? 1
+      : -1
+    : 0
 
 /**
  *  @param {String} cookies
