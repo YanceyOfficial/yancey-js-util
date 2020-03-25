@@ -8,7 +8,11 @@ Collect the JavaScript utility functions in works. Continuous updating...
 
 ## Install
 
-    npm i yancey-js-util
+```bash
+yarn add yancey-js-util
+# Or with npm:
+npm i yancey-js-util
+```
 
 ## Function Lists
 
