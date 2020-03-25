@@ -12,7 +12,7 @@ export declare const deepFlatten: (arr: any) => any;
 export declare const checkWebp: () => boolean;
 export declare const getFileExtension: (filename: string) => string;
 export declare const isValidIP: (ip: string) => boolean;
-export declare const sortBy: (key: string) => (a: any, b: any) => 1 | -1 | 0;
+export declare const sortBy: <T>(key: keyof T, order?: "ascend" | "descend") => (a: T, b: T) => 1 | -1 | 0;
 export declare const formatCookie: (cookies: string) => {};
 export declare const sleep: (delay?: number) => Promise<unknown>;
 export declare const randomColor: () => string;
