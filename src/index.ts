@@ -1,5 +1,3 @@
-import { reg } from './constant'
-
 /**
  *  @param {Object} param
  *  @description To get the type of param.
@@ -144,7 +142,9 @@ export const getFileExtension = (filename: string) =>
  *  @description check ip
  * */
 export const isValidIP = (ip: string) => {
-  return reg.ip.test(ip)
+  return /^(d{1,2}|1dd|2[0-4]d|25[0-5]).(d{1,2}|1dd|2[0-4]d|25[0-5]).(d{1,2}|1dd|2[0-4]d|25[0-5]).(d{1,2}|1dd|2[0-4]d|25[0-5])$/.test(
+    ip,
+  )
 }
 
 /**
@@ -194,11 +194,12 @@ export const randomColor = () =>
 
 /**
  *  @param {Number} length
+ *  @param {Number} hex
  *  @description Generate a random series at most 10 length
  * */
-export const randomSeries = (length: number) =>
+export const randomSeries = (length: number, hex: number = 36) =>
   Math.random()
-    .toString(36)
+    .toString(hex)
     .slice(2, 2 + length)
 
 /**
