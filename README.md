@@ -52,7 +52,7 @@ npm i yancey-js-util
 
 - randomColor() => #000000
 
-- randomSeries() => 7w1krvcf34l
+- randomSeries(12, 36) => 7w1krvcf34l
 
 - mongoObjectIdToTimestamp('5db957fa09843900107960ed') => 1572427770000
 
