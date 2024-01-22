@@ -1,0 +1,35 @@
+{
+  "name": "yancey-js-util",
+  "version": "3.2.0",
+  "description": "Collect the JavaScript utility functions in works. Continuous updating...",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YanceyOfficial/js-tools.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Util-Functions"
+  ],
+  "author": "Yancey Leo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YanceyOfficial/js-tools/issues"
+  },
+  "homepage": "https://github.com/YanceyOfficial/js-tools#readme",
+  "devDependencies": {
+    "rollup": "^2.79.0",
+    "rollup-plugin-filesize": "^9.1.2",
+    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-typescript2": "^0.27.3",
+    "typescript": "^3.9.10"
+  }
+}
